@@ -1,3 +1,11 @@
+do not do this lol
+
+```
+python create_droplet.py -l k8s
+[<Droplet: blah>, <Droplet: blah>, <Droplet: blah>]
+Creating your droplet!
+```
+
 # digitalocean_builder
 Build things on digital ocean using a build script
 

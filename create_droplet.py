@@ -99,7 +99,7 @@ def main():
     parser.add_argument(
         '-l',
         action='store',
-        default='60'
+        default='60',
     )
 
     if len(sys.argv) < 3:
