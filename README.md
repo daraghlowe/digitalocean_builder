@@ -19,7 +19,7 @@ Build things on digital ocean using a build script
 # To Do
 - Delete droplets
 - Track who whodunnit
-- List existing droplets
+- ~~List existing droplets~~ - list by tag
 - Replace hard coded information with dynamic input 
 - Create more comprehensive tags and droplet naming
 - Faciliate restarting the droplets
