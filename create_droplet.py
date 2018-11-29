@@ -77,10 +77,16 @@ def get_region_list():
         regions = '{} {}'.format(regions, region.slug)
     return regions
 
+def list_droplets(token):
+    manager = digitalocean.Manager(token="replace-with-api")
+    list_droplets = manager.get_all_droplets()
+    print(list_droplets)
 
 def main():
     parser = argparse.ArgumentParser(description='Digital Ocean Droplet Builder')
     regions = get_region_list()
+    list = list_droplets(api_key)
+
 
     parser.add_argument(
         '-r',
@@ -89,6 +95,11 @@ def main():
         dest='region',
         default='60',
         help=regions
+    )
+    parser.add_argument(
+        '-l',
+        action='store',
+        default='60',
     )
 
     if len(sys.argv) < 2:
