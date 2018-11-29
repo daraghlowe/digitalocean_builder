@@ -77,15 +77,15 @@ def get_region_list():
         regions = '{} {}'.format(regions, region.slug)
     return regions
 
-def list_droplets(token):
-    manager = digitalocean.Manager(token="replace-with-api")
+def list_droplets():
+    manager = digitalocean.Manager(token=api_key)
     list_droplets = manager.get_all_droplets()
     print(list_droplets)
 
 def main():
     parser = argparse.ArgumentParser(description='Digital Ocean Droplet Builder')
     regions = get_region_list()
-    list = list_droplets(api_key)
+    list = list_droplets()
 
 
     parser.add_argument(
