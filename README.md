@@ -1,10 +1,5 @@
-do not do this lol
-
-```
-python create_droplet.py -l k8s
-[<Droplet: blah>, <Droplet: blah>, <Droplet: blah>]
-Creating your droplet!
-```
+Added `-images` to check for available images. Seeing as it's hardcoded currently we'd need to do it eventually. It picks up on the `api_key` too.
+Need to figure out a way of just parsing the information we want from it though & also passing it to `-r` to create the droplet.
 
 # digitalocean_builder
 Build things on digital ocean using a build script

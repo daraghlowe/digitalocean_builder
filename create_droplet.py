@@ -1,6 +1,7 @@
-import digitalocean
 import argparse
 import sys
+import requests
+import digitalocean
 
 
 def get_file_contents(filename):
@@ -108,6 +109,13 @@ def main():
         dest='operation_build',
         help='Build a new droplet.'
     )
+    parser.add_argument (
+        '-images',
+        action='store_true',
+        default='False',
+        dest='operation_get_images',
+        help='Finds droplet images'
+    )
 
     args = parser.parse_args()
 
@@ -123,6 +131,15 @@ def main():
     if args.operation_list is True:
         list_droplets()
 
+    if args.operation_get_images is True:
+        headers = {
+            'Authorization': "Bearer {}".format(api_key)
+        }
+        params = (
+            ('page', '3'),
+        )
+        r = requests.get('https://api.digitalocean.com/v2/images', headers=headers, params=params)
+        print(r.text)
 
 if __name__ == '__main__':
     main()
