@@ -108,7 +108,7 @@ def main():
 
     args = parser.parse_args()
 
-    image_id = "40248606"
+    image_id = "41122485"
     droplet_size = "s-1vcpu-1gb"
     tag_list = ["web"]
 
