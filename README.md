@@ -17,5 +17,9 @@ Build things on digital ocean using a build script
 - Faciliate restarting the droplets
 - Faciliate editing droplets eg. size
 
+### Droplet List To Do
+- Seperate droplets somehow
+- Have an option to get more information by droplet ID
+
 # Off In The Future
 - Build clustered environments
