@@ -85,8 +85,6 @@ def list_droplets():
 def main():
     parser = argparse.ArgumentParser(description='Digital Ocean Droplet Builder')
     regions = get_region_list()
-    list = list_droplets()
-
 
     parser.add_argument(
         '-r',
@@ -98,23 +96,32 @@ def main():
     )
     parser.add_argument(
         '-l',
-        action='store',
-        default='60'
+        action='store_true',
+        default='False',
+        dest='operation_list',
+        help='List all running droplets.'
     )
-
-    if len(sys.argv) < 3:
-        parser.print_usage()
-        sys.exit(1)
+    parser.add_argument(
+        '-b',
+        action='store_true',
+        default='False',
+        dest='operation_build',
+        help='Build a new droplet.'
+    )
 
     args = parser.parse_args()
 
-    image_id = "40248606"
+    image_id = "41122485"
     droplet_size = "s-1vcpu-1gb"
     tag_list = ["web"]
 
-    print("Creating your droplet!")
-    droplet = create_droplet(api_key, args.region, image_id, droplet_size, tag_list)
-    print("Build complete for {}".format(droplet))
+    if args.operation_build is True:
+        print("Creating your droplet!")
+        droplet = create_droplet(api_key, args.region, image_id, droplet_size, tag_list)
+        print("Build complete for {}".format(droplet))
+
+    if args.operation_list is True:
+        list_droplets()
 
 
 if __name__ == '__main__':
