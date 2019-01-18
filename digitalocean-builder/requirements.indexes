@@ -1,0 +1,3 @@
+# This extra index is our private gemfury pypi repo. There does not seem to be an easy alternative to putting the
+# secret url into source code
+--extra-index-url https://pypi.fury.io/ngjmB-ALDj0b7dH8vBo71WnLEU4SlVxw8/wpengine/

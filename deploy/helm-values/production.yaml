@@ -1,0 +1,30 @@
+appName: "digitalocean-builder"
+alertRules:
+  - alert: High500Errors
+    expr: rate(django_http_responses_total_by_status{status=~"50[0-9]",app="digitalocean-builder-production"}[15m]) > 0.2  # yamllint disable-line
+    for: 5m
+    labels:
+      severity: page
+    annotations:
+      summary: Increase in 500 errors for digitalocean-builder-production
+dnsName: "digitalocean-builder.wpesvc.net"
+envVars:
+  ENVIRONMENT: "production"
+
+prometheus:
+  urlExporter:
+    enabled: true
+    port: 3000
+    path: /metrics
+  threadExporter:
+    enabled: true
+    numThreads: 4  # numThreads equals number of processes in wsgi config
+
+celeryScheduler:
+  enabled: true
+celeryWorker:
+  enabled: true
+
+gcp_endpoints:
+  enabled: false
+  service: digitalocean-builder-production.endpoints.wp-engine-corporate.cloud.goog

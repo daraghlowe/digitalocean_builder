@@ -1,0 +1,5 @@
+# Note:  SSH wipes ENV variables, so we need to add these outside
+#        of docker-compose
+export REDIS_URL="redis://redis:6379/0"
+export DATABASE_URL="postgres://postgres:my-secret-pw@db:5432/digitalocean-builder"
+export DJANGO_SETTINGS_MODULE="config.settings.test"

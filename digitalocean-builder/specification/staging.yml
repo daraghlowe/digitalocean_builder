@@ -1,0 +1,6 @@
+title: digitalocean-builder-staging
+host: digitalocean-builder-staging.endpoints.wp-engine-corporate.cloud.goog
+
+firebaseSecurity:
+  issuer: "https://securetoken.google.com/wp-engine-development"
+  audiences: "wp-engine-development"
