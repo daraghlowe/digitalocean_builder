@@ -1,0 +1,19 @@
+# This is where dev/test dependencies should be specified.
+# This keeps the production container slim but provides additional
+# goodies for the dev container.
+-r requirements.indexes
+
+# Dev tools
+ipython
+
+# Test tools
+bs4
+coverage
+django-nose
+factory_boy > 2.8
+flake8
+mypy-lang
+# TODO: include swagger-spec-validator in wpe-django-swagger
+swagger-spec-validator
+yamllint
+parameterized
