@@ -2,13 +2,13 @@
 Build things on digital ocean using a build script
 
 
-# Current abilities
+ # Current abilities
 - Creates digital ocean droplets
 - Automatically names droplets based on count of exiting droplets - eg. if web-1 exists, build web-2
 - Allows selection of region
 - Has an argeparser interface
 
-# To Do
+ # To Do
 - Delete droplets
 - Track who whodunnit
 - List existing droplets
@@ -17,5 +17,5 @@ Build things on digital ocean using a build script
 - Faciliate restarting the droplets
 - Faciliate editing droplets eg. size
 
-# Off In The Future
+ # Off In The Future
 - Build clustered environments
