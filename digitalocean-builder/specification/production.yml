@@ -1,6 +1,0 @@
-title: digitalocean-builder-production
-host: digitalocean-builder-production.endpoints.wp-engine-corporate.cloud.goog
-
-firebaseSecurity:
-  issuer: "https://securetoken.google.com/wp-engine-corporate"
-  audiences: "wp-engine-corporate"
